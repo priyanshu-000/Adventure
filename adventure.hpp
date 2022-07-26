@@ -3,28 +3,30 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Player {
 
 private:
 
-	std::vector<std::string> inventory;
-	std::vector<std::string> inv();
-	std::string name;
+	vector<string> inventory;
+	vector<string> inv();
+	string name;
 	int gold;
 
 public:
 
 
-	Player(std::string new_name = "Bronan", std::vector<std::string> new_inventory = { "Backpack" }, int new_gold = 5);
+	Player(string new_name = "Bronan", vector<string> new_inventory = { "Backpack" }, int new_gold = 5);
 	int gp();
 	//displays inventory and gold
 	void show_inv();
 	//used for purchases
-	void buy_item(std::string item, int cost);
+	void buy_item(string item, int cost);
 	//checks inventory for a specific item
-	bool check_inv(std::string item);
+	bool check_inv(string item);
 	//add item to inventory
-	void add_item(std::string item);
+	void add_item(string item);
 	//reset inventory and gold
 	void reset();
 
@@ -34,20 +36,20 @@ class Location {
 
 private:
 
-	std::string name;
-	std::string description;
-	std::vector<std::string> options;
+	string name;
+	string description;
+	vector<string> options;
 	bool cleared = false;
 
 public:
 	
-	Location(std::string new_name, std::vector<std::string> new_options, std::string new_description);
+	Location(string new_name, vector<string> new_options, string new_description);
 
 	void locate();
 	void describe();
 	void show_options();
-	std::vector<std::string> get_options();
-	std::string get_name();
+	vector<string> get_options();
+	string get_name();
 	bool is_clear();
 	void clear();
 	void reset();
@@ -57,7 +59,7 @@ public:
 bool greeting();
 void play_game();
 bool choice();
-std::string get_rumour();
+string get_rumour();
 bool play_again();
 void reset_locs();
 
